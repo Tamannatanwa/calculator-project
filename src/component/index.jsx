@@ -31,23 +31,23 @@ import {
 
     function resetInput(e) { 
         e.preventDefault(); 
-        setResult((result) => result * 0); 
+        inputRef.current.value = 0;
+        
     }
    
     function resetResult(e) { 
         e.preventDefault(); 
-        setResult((result) => result * result); 
+        setResult((result) => result * 0); 
     }
    
     return ( 
       <div className="App"> 
         <div> 
           <h1>Simplest Working Calculator</h1> 
-          <h1>Result: {result}</h1>
         </div> 
         <form> 
           <p ref={resultRef}> 
-            {/* add the value of the current total */} 
+            {result} 
           </p> 
           <input
             pattern="[0-9]" 
